@@ -2,7 +2,7 @@ let rangeBtn = document.querySelector("#range");
 const radioBtn = document.querySelectorAll('input[type="radio"]');
 const modalBox = document.querySelectorAll(".modal--box");
 const modalFooter = document.querySelectorAll(".modal--box-footer");
-const priceBtn = document.querySelectorAll("#price-btn");
+const priceBtn = document.querySelectorAll("#continueBtn");
 const support = document.querySelector(".support");
 const daysLeft = document.getElementById("daysleft");
 
@@ -106,4 +106,56 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("close-menu");
 
   menu.classList.toggle("active");
+});
+
+// Select the input field in the modal
+let pledgeInput = document.querySelector(".modal--box-footer .quantity input");
+
+// Add event listener for input changes
+pledgeInput.addEventListener("input", function () {
+  // Get the entered amount
+  const enteredAmount = parseInt(this.value);
+
+  // Update the backed amount in the main--range
+  const backedAmount = document.querySelector(
+    ".main--range-items li:first-child h2"
+  );
+  backedAmount.textContent = `$${enteredAmount.toLocaleString()}`;
+});
+
+let pledgeInputss = document.querySelector(
+  ".modal--box-footer .quantity input"
+);
+
+const pledgeInput1 = document.getElementById("pledgeInput1");
+const pledgeInput2 = document.getElementById("pledgeInput2");
+const pledgeInput3 = document.getElementById("pledgeInput3");
+
+//  reference continue button by their IDs
+const continueBtn1 = document.getElementById("continueBtn1");
+const continueBtn2 = document.getElementById("continueBtn2");
+const continueBtn3 = document.getElementById("continueBtn3");
+
+//  Add event listeners for input changes
+
+pledgeInput1.addEventListener("input", function () {
+  const enteredAmount = parseInt(this.value);
+  const backedAmount = document.querySelector(
+    ".main--range-items li:first-child h2"
+  );
+  backedAmount.textContent = `$${enteredAmount.toLocaleString()}`;
+});
+pledgeInput2.addEventListener("input", function () {
+  const enteredAmount = parseInt(this.value);
+  const backedAmount = document.querySelector(
+    ".main--range-items li:first-child h2"
+  );
+  backedAmount.textContent = `$${enteredAmount.toLocaleString()}`;
+});
+pledgeInput3.addEventListener("input", function () {
+  const enteredAmount = parseInt(this.value);
+  const backedAmount = document.querySelector(
+    ".main--range-items li:first-child h2"
+  );
+  backedAmount.textContent = `$${enteredAmount.toLocaleString()}`;
 });

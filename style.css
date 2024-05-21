@@ -149,7 +149,7 @@ body {
 .end:hover {
   cursor: pointer;
   color: initial;
-  border-radius: 5px solid blue;
+  border-radius: 2px solid blue;
 }
 
 .main--top-links {
@@ -335,18 +335,18 @@ input[type="range"]::-webkit-slider-thumb {
 .modal--box-content p {
   grid-column: span 3;
 }
-#price-btn {
+#continueBtn {
   background-color: var(--Moderate-cyan);
   width: 5rem;
   margin-right: 1rem;
   color: var(--White);
 }
-#price-btn:hover {
+#continueBtn:hover {
   background-color: var(--White);
   border: 1px solid var(--Moderate-cyan);
   color: var(--Light-gray);
 }
-#price-btn:hover span {
+#continueBtn:hover span {
   color: var(--Black);
   font-weight: 700;
 }
