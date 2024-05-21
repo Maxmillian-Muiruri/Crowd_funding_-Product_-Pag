@@ -4,6 +4,44 @@ const modalBox = document.querySelectorAll(".modal--box");
 const modalFooter = document.querySelectorAll(".modal--box-footer");
 const priceBtn = document.querySelectorAll("#price-btn");
 const support = document.querySelector(".support");
+const daysLeft = document.getElementById("daysleft");
+
+function updateCountdown() {
+  const today = new Date();
+  let targetDate = new Date(today.getFullYear(), 8, 17); // september 17th of the current year
+  // If today is past September 17th, set the target date to next year
+  if (today > targetDate) {
+    targetDate.setFullYear(today.getFullYear() + 1);
+  }
+  const difference = targetDate - today;
+  const daysLeft = Math.ceil(difference / (1000 * 60 * 60 * 24));
+  document.getElementById("daysleft").textContent = daysLeft;
+}
+
+// Call the function to set the initial countdown value
+updateCountdown();
+
+// Update the countdown every 24 hours (1000 milliseconds * 60 seconds * 60 minutes * 24 hours)
+setInterval(updateCountdown, 1000 * 60 * 60 * 24);
+
+let i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    let elem = document.getElementById("myBar");
+    let width = 1;
+    let id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
 
 radioBtn.forEach((btn, i) => {
   btn.addEventListener("change", () => {
